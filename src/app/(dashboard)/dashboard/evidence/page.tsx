@@ -1,6 +1,6 @@
 "use client"
 
-import { Cloud, Github, KeyRound, Monitor } from "lucide-react"
+import { Cloud, Github, KeyRound, Monitor, type LucideIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -14,7 +14,7 @@ import {
 
 interface EvidenceRow {
   source: string
-  sourceIcon: React.ElementType
+  sourceIcon: LucideIcon
   type: string
   linkedControl: string
   collectedAt: string
