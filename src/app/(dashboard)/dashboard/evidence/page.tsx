@@ -126,11 +126,13 @@ export default function EvidencePage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {evidence.map((e, i) => (
+                {evidence.map((e, i) => {
+                  const Icon = e.sourceIcon
+                  return (
                   <TableRow key={i}>
                     <TableCell>
                       <div className="flex items-center gap-2">
-                        <e.sourceIcon className="h-4 w-4 text-muted-foreground" />
+                        <Icon className="h-4 w-4 text-muted-foreground" />
                         <span>{e.source}</span>
                       </div>
                     </TableCell>
@@ -155,7 +157,8 @@ export default function EvidencePage() {
                       </Badge>
                     </TableCell>
                   </TableRow>
-                ))}
+                  )
+                })}
               </TableBody>
             </Table>
           </CardContent>
