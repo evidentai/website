@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { SidebarConfigProvider } from "@/contexts/sidebar-context";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -40,7 +39,7 @@ export default function RootLayout({
     >
       <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider defaultTheme="system" storageKey="evident-ai-theme">
-          <SidebarConfigProvider>{children}</SidebarConfigProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>
