@@ -34,11 +34,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="antialiased"
+      className="dark antialiased"
       suppressHydrationWarning
     >
       <body className="font-sans" suppressHydrationWarning>
-        <ThemeProvider defaultTheme="system" storageKey="evident-ai-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="evident-ai-theme">
           {children}
         </ThemeProvider>
       </body>
