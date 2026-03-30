@@ -28,7 +28,7 @@ const demoHighlights = [
 ];
 
 export function BookDemoContent() {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+  const calendlyUrl = "https://calendly.com/evidentflow/evidentflow-product-demo";
 
   return (
     <>
