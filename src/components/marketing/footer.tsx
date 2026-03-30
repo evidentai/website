@@ -53,7 +53,7 @@ export function Footer() {
         {/* Bottom: Social + Copyright */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} evident.ai. All rights
+            &copy; {new Date().getFullYear()} evidentflow.ai. All rights
             reserved.
           </p>
           <div className="flex items-center gap-4">

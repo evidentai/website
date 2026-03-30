@@ -29,7 +29,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} — evident.ai Blog`,
+    title: `${post.title} — evidentflow.ai Blog`,
     description: post.description,
   };
 }

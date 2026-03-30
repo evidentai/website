@@ -9,7 +9,7 @@ export function CtaBand() {
           Ready to get SOC 2 ready in weeks?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-          See how evident.ai automates evidence collection, monitors controls,
+          See how evidentflow.ai automates evidence collection, monitors controls,
           and gets you audit-ready — no commitment required.
         </p>
 

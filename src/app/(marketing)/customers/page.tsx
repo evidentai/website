@@ -10,7 +10,7 @@ import { BeamsHero } from "@/components/marketing/beams-hero";
 export const metadata: Metadata = {
   title: "Customers",
   description:
-    "Trusted by fast-moving teams who need compliance without the friction. See how startups and enterprises use evident.ai to ship faster.",
+    "Trusted by fast-moving teams who need compliance without the friction. See how startups and enterprises use evidentflow.ai to ship faster.",
 };
 
 const logoCompanies = [
@@ -33,7 +33,7 @@ const caseStudies = [
       { icon: TrendingUp, label: "From Series A to enterprise-ready" },
     ],
     summary:
-      "DataStack was losing enterprise deals because they couldn't answer security questionnaires. After deploying evident.ai, they went from zero compliance posture to SOC 2 Type II in just 8 weeks — closing their first enterprise contract within days of sharing their trust report.",
+      "DataStack was losing enterprise deals because they couldn't answer security questionnaires. After deploying evidentflow.ai, they went from zero compliance posture to SOC 2 Type II in just 8 weeks — closing their first enterprise contract within days of sharing their trust report.",
   },
   {
     company: "CloudScale",
@@ -43,7 +43,7 @@ const caseStudies = [
       { icon: Shield, label: "Now 1 security engineer manages everything" },
     ],
     summary:
-      "As CloudScale scaled across AWS and GCP, managing SOC 2, ISO 27001, and HIPAA simultaneously became untenable. evident.ai's shared control mapping and continuous monitoring let a single security engineer handle what previously required a dedicated team of four.",
+      "As CloudScale scaled across AWS and GCP, managing SOC 2, ISO 27001, and HIPAA simultaneously became untenable. evidentflow.ai's shared control mapping and continuous monitoring let a single security engineer handle what previously required a dedicated team of four.",
   },
   {
     company: "NexaPay",
@@ -53,7 +53,7 @@ const caseStudies = [
       { icon: TrendingUp, label: "AI screenshot agent eliminated manual work" },
     ],
     summary:
-      "NexaPay's security team was spending 200+ hours per audit cycle manually capturing screenshots and gathering evidence across dozens of tools. evident.ai's AI-powered screenshot agent and automated collectors reduced that to under 5 hours of review time.",
+      "NexaPay's security team was spending 200+ hours per audit cycle manually capturing screenshots and gathering evidence across dozens of tools. evidentflow.ai's AI-powered screenshot agent and automated collectors reduced that to under 5 hours of review time.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function CustomersPage() {
           <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
             From seed-stage startups closing their first enterprise deal to
             public companies managing multi-framework compliance — teams choose
-            evident.ai to move fast without breaking trust.
+            evidentflow.ai to move fast without breaking trust.
           </p>
         </div>
       </BeamsHero>
@@ -149,7 +149,7 @@ export default function CustomersPage() {
               Customer stories
             </h2>
             <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-              See how real teams achieved compliance faster with evident.ai.
+              See how real teams achieved compliance faster with evidentflow.ai.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export default function CustomersPage() {
             Join the teams building trust at scale
           </h2>
           <p className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto">
-            See why fast-growing teams trust evident.ai to automate their
+            See why fast-growing teams trust evidentflow.ai to automate their
             compliance journey.
           </p>
           <div className="mt-8">

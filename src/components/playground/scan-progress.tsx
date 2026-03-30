@@ -102,7 +102,7 @@ export function ScanProgress() {
         >
           <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5">
             <Terminal className="size-4 text-[#00E5A0]" />
-            <span className="text-xs text-white/60">evident.ai scanner</span>
+            <span className="text-xs text-white/60">evidentflow.ai scanner</span>
             <div className="ml-auto flex gap-1.5">
               <span className="size-2.5 rounded-full bg-white/20" />
               <span className="size-2.5 rounded-full bg-white/20" />

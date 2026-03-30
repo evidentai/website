@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const siteConfig = {
-  name: "evident.ai",
+  name: "evidentflow.ai",
   description:
     "Continuous compliance & evidence automation for high-growth startups. Cut audit prep from months to weeks.",
   url: "https://yourdomain.com",

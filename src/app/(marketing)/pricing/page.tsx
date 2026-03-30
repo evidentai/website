@@ -23,7 +23,7 @@ import { generateFAQSchema } from "@/lib/seo";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Pricing — evident.ai",
+  title: "Pricing — evidentflow.ai",
   description:
     "Transparent pricing for continuous compliance automation. Start free with your first SOC 2 readiness assessment — no credit card required.",
 };

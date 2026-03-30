@@ -368,7 +368,7 @@ export function SolutionDiagram({ showHeading = true }: SolutionDiagramProps = {
               />
               <div className="relative rounded-2xl border bg-card p-5">
                 <p className="mb-4 text-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                  evident.ai Platform
+                  evidentflow.ai Platform
                 </p>
                 <div className="space-y-2.5">
                   {platformFeatures.map((feat, i) => (
@@ -480,7 +480,7 @@ export function SolutionDiagram({ showHeading = true }: SolutionDiagramProps = {
             />
             <div className="relative rounded-2xl border bg-card p-5">
               <p className="mb-4 text-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                evident.ai Platform
+                evidentflow.ai Platform
               </p>
               <div className="space-y-2.5">
                 {platformFeatures.map((feat, i) => (

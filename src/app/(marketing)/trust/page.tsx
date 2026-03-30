@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Trust & Security — evident.ai",
+  title: "Trust & Security — evidentflow.ai",
   description:
     "Security is our foundation. Learn about our certifications, security controls, and how we protect your data.",
 };

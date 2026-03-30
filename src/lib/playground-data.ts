@@ -26,6 +26,32 @@ export interface ChecklistItem {
   category: string;
 }
 
+interface FrameworkMetadata {
+  totalControls: number;
+  controlGroups: number;
+}
+
+export const insightsByFramework: Record<
+  string,
+  { critical: number; high: number; medium: number; low: number; remediate: number }
+> = {
+  "SOC 2": { critical: 29, high: 83, medium: 194, low: 347, remediate: 418 },
+  "ISO 27001": { critical: 34, high: 91, medium: 213, low: 371, remediate: 456 },
+  HIPAA: { critical: 41, high: 97, medium: 178, low: 312, remediate: 389 },
+  GDPR: { critical: 22, high: 67, medium: 201, low: 358, remediate: 421 },
+  FedRAMP: { critical: 47, high: 112, medium: 237, low: 389, remediate: 503 },
+  CMMC: { critical: 36, high: 89, medium: 206, low: 334, remediate: 427 },
+};
+
+const frameworkMetadata: Record<string, FrameworkMetadata> = {
+  "SOC 2": { totalControls: 64, controlGroups: 13 },
+  "ISO 27001": { totalControls: 114, controlGroups: 14 },
+  HIPAA: { totalControls: 45, controlGroups: 3 },
+  GDPR: { totalControls: 99, controlGroups: 11 },
+  FedRAMP: { totalControls: 325, controlGroups: 17 },
+  CMMC: { totalControls: 130, controlGroups: 14 },
+};
+
 export interface DemoDataset {
   nodes: GraphNode[];
   edges: GraphEdge[];
@@ -33,6 +59,7 @@ export interface DemoDataset {
   checklist: ChecklistItem[];
   finalScore: number;
   scanLogs: string[];
+  totalControls: number;
 }
 
 const awsNodes: GraphNode[] = [
@@ -240,16 +267,83 @@ const fedrampRisks: RiskItem[] = [
 ];
 
 const soc2Checklist: ChecklistItem[] = [
-  { id: "c1", label: "Encryption at rest enabled", category: "Security" },
-  { id: "c2", label: "Encryption in transit (TLS 1.2+)", category: "Security" },
-  { id: "c3", label: "Access control policies defined", category: "Security" },
-  { id: "c4", label: "MFA enforced for privileged access", category: "Security" },
-  { id: "c5", label: "Incident response plan documented", category: "Availability" },
-  { id: "c6", label: "Backup and recovery procedures tested", category: "Availability" },
-  { id: "c7", label: "Change management process in place", category: "Processing Integrity" },
-  { id: "c8", label: "Logging and monitoring configured", category: "Security" },
-  { id: "c9", label: "Vendor risk assessments completed", category: "Security" },
-  { id: "c10", label: "Employee security training completed", category: "Security" },
+  // Availability (A)
+  { id: "A1.1", label: "Manages processing capacity", category: "Availability" },
+  { id: "A1.2", label: "Implements recovery infrastructure and backup", category: "Availability" },
+  { id: "A1.3", label: "Tests recovery procedures", category: "Availability" },
+  
+  // Confidentiality (C)
+  { id: "C1.1", label: "Identifies confidential information", category: "Confidentiality" },
+  { id: "C1.2", label: "Disposes confidential information", category: "Confidentiality" },
+  
+  // Control Environment (CC1)
+  { id: "CC1.1", label: "Integrity and ethical values", category: "Control Environment" },
+  { id: "CC1.2", label: "Board independence and oversight", category: "Control Environment" },
+  { id: "CC1.3", label: "Organizational structure", category: "Control Environment" },
+  { id: "CC1.4", label: "Competence and personnel", category: "Control Environment" },
+  { id: "CC1.5", label: "Accountability", category: "Control Environment" },
+  
+  // Communication & Information (CC2)
+  { id: "CC2.1", label: "Information quality", category: "Communication & Information" },
+  { id: "CC2.2", label: "Internal communication", category: "Communication & Information" },
+  { id: "CC2.3", label: "External communication", category: "Communication & Information" },
+  
+  // Risk Assessment (CC3)
+  { id: "CC3.1", label: "Defines objectives", category: "Risk Assessment" },
+  { id: "CC3.2", label: "Identifies risks", category: "Risk Assessment" },
+  { id: "CC3.3", label: "Fraud risk consideration", category: "Risk Assessment" },
+  { id: "CC3.4", label: "Identifies changes", category: "Risk Assessment" },
+  
+  // Monitoring (CC4)
+  { id: "CC4.1", label: "Ongoing evaluations", category: "Monitoring" },
+  { id: "CC4.2", label: "Communicates deficiencies", category: "Monitoring" },
+  
+  // Control Activities (CC5)
+  { id: "CC5.1", label: "Selects control activities", category: "Control Activities" },
+  { id: "CC5.2", label: "Technology controls", category: "Control Activities" },
+  { id: "CC5.3", label: "Policies and procedures", category: "Control Activities" },
+  
+  // Logical & Physical Access (CC6)
+  { id: "CC6.1", label: "Access controls implementation", category: "Logical & Physical Access" },
+  { id: "CC6.2", label: "User authorization", category: "Logical & Physical Access" },
+  { id: "CC6.3", label: "Access modification", category: "Logical & Physical Access" },
+  { id: "CC6.4", label: "Physical access restrictions", category: "Logical & Physical Access" },
+  { id: "CC6.5", label: "Access removal", category: "Logical & Physical Access" },
+  { id: "CC6.6", label: "External threat protection", category: "Logical & Physical Access" },
+  { id: "CC6.7", label: "Data transmission protection", category: "Logical & Physical Access" },
+  { id: "CC6.8", label: "Malware protection", category: "Logical & Physical Access" },
+  
+  // System Operations (CC7)
+  { id: "CC7.1", label: "Detect configuration changes", category: "System Operations" },
+  { id: "CC7.2", label: "Monitor system activity", category: "System Operations" },
+  { id: "CC7.3", label: "Evaluate security events", category: "System Operations" },
+  { id: "CC7.4", label: "Incident response", category: "System Operations" },
+  { id: "CC7.5", label: "Recover from incidents", category: "System Operations" },
+  
+  // Change Management (CC8)
+  { id: "CC8.1", label: "Manage system changes", category: "Change Management" },
+  
+  // Risk Mitigation (CC9)
+  { id: "CC9.1", label: "Business continuity risk mitigation", category: "Risk Mitigation" },
+  { id: "CC9.2", label: "Vendor risk management", category: "Risk Mitigation" },
+  
+  // Privacy (P)
+  { id: "P1.1", label: "Privacy notice", category: "Privacy" },
+  { id: "P1.2", label: "Consent management", category: "Privacy" },
+  { id: "P1.3", label: "Data collection limitation", category: "Privacy" },
+  { id: "P1.4", label: "Data usage limitation", category: "Privacy" },
+  { id: "P1.5", label: "Data retention", category: "Privacy" },
+  { id: "P1.6", label: "Data disposal", category: "Privacy" },
+  { id: "P1.7", label: "Third-party disclosure", category: "Privacy" },
+  { id: "P1.8", label: "Access to personal data", category: "Privacy" },
+  { id: "P1.9", label: "Data correction", category: "Privacy" },
+  
+  // Processing Integrity (PI)
+  { id: "PI1.1", label: "Information processing quality", category: "Processing Integrity" },
+  { id: "PI1.2", label: "Input validation", category: "Processing Integrity" },
+  { id: "PI1.3", label: "Processing controls", category: "Processing Integrity" },
+  { id: "PI1.4", label: "Output accuracy", category: "Processing Integrity" },
+  { id: "PI1.5", label: "Data storage integrity", category: "Processing Integrity" },
 ];
 
 const hipaaChecklist: ChecklistItem[] = [
@@ -390,6 +484,7 @@ export function getDemoData(framework: FrameworkKey, cloud: CloudKey): DemoDatas
     checklist: fwData.checklist,
     finalScore: fwData.score,
     scanLogs: cloudData.logs,
+    totalControls: frameworkMetadata[framework].totalControls,
   };
 }
 

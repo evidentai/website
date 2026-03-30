@@ -2,7 +2,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "evident.ai",
+    name: "evidentflow.ai",
     url: "https://yourdomain.com",
     logo: "https://yourdomain.com/images/logo.png",
     description: "Continuous compliance & evidence automation for high-growth startups.",
@@ -14,7 +14,7 @@ export function generateOrganizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
-      email: "hello@evident.ai",
+      email: "sales@evidentflow.ai",
     },
   };
 }
@@ -23,7 +23,7 @@ export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "evident.ai",
+    name: "evidentflow.ai",
     url: "https://yourdomain.com",
     potentialAction: {
       "@type": "SearchAction",
@@ -53,7 +53,7 @@ export function generateBlogPostSchema(post: {
     },
     publisher: {
       "@type": "Organization",
-      name: "evident.ai",
+      name: "evidentflow.ai",
       logo: {
         "@type": "ImageObject",
         url: "https://yourdomain.com/images/logo.png",

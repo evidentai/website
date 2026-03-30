@@ -5,7 +5,7 @@ import { PlaygroundContainer } from "@/components/playground/playground-containe
 export const metadata: Metadata = {
   title: "Product Tour",
   description:
-    "Experience evident.ai in action. Walk through a simulated compliance scan, see risks surface in real-time, and explore the dashboard — all without signing up.",
+    "Experience evidentflow.ai in action. Walk through a simulated compliance scan, see risks surface in real-time, and explore the dashboard — all without signing up.",
 };
 
 export default function ProductTourPage() {

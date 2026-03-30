@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!fw) return {};
 
   return {
-    title: `${fw.name} Compliance Automation — evident.ai`,
+    title: `${fw.name} Compliance Automation — evidentflow.ai`,
     description: fw.description,
   };
 }
@@ -113,7 +113,7 @@ export default async function FrameworkPage({
           See {fw.shortName} automation in action
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Book a demo and we&apos;ll walk you through how evident.ai automates{" "}
+          Book a demo and we&apos;ll walk you through how evidentflow.ai automates{" "}
           {fw.shortName} evidence collection end-to-end.
         </p>
         <div className="mt-8">

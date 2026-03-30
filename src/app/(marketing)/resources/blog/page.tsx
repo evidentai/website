@@ -13,7 +13,7 @@ import { getAllPosts, getAllTags } from "@/lib/blog";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Blog — evident.ai",
+  title: "Blog — evidentflow.ai",
   description:
     "Articles, guides, and insights on compliance automation, SOC 2, ISO 27001, and more.",
 };
@@ -31,7 +31,7 @@ export default function BlogPage() {
               Blog
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Insights and guides on compliance automation from the evident.ai
+              Insights and guides on compliance automation from the evidentflow.ai
               team.
             </p>
           </div>

@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!solution) return {};
 
   return {
-    title: `${solution.title} — evident.ai`,
+    title: `${solution.title} — evidentflow.ai`,
     description: solution.description,
   };
 }
@@ -104,7 +104,7 @@ export default async function SolutionPage({
           Ready to see it in action?
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Book a 30-minute demo and see how evident.ai works for your team.
+          Book a 30-minute demo and see how evidentflow.ai works for your team.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

@@ -7,7 +7,7 @@ import { solutions } from "@/lib/constants";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Solutions — evident.ai",
+  title: "Solutions — evidentflow.ai",
   description:
     "Segment-specific compliance solutions for startups, growing SaaS, DevSecOps teams, and auditors. Tailored automation for every role.",
 };

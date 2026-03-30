@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { usePlaygroundStore, type Framework } from "@/lib/playground-store";
+import { insightsByFramework } from "@/lib/playground-data";
 import {
   AlertTriangle,
   AlertCircle,
@@ -12,18 +13,6 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const insightsByFramework: Record<
-  Framework,
-  { critical: number; high: number; medium: number; low: number; remediate: number }
-> = {
-  "SOC 2": { critical: 29, high: 83, medium: 194, low: 347, remediate: 418 },
-  "ISO 27001": { critical: 34, high: 91, medium: 213, low: 371, remediate: 456 },
-  HIPAA: { critical: 41, high: 97, medium: 178, low: 312, remediate: 389 },
-  GDPR: { critical: 22, high: 67, medium: 201, low: 358, remediate: 421 },
-  FedRAMP: { critical: 47, high: 112, medium: 237, low: 389, remediate: 503 },
-  CMMC: { critical: 36, high: 89, medium: 206, low: 334, remediate: 427 },
-};
 
 function useCountUp(target: number, duration: number, delay: number) {
   const [value, setValue] = useState(0);
@@ -171,7 +160,7 @@ export function InsightsView() {
           <div className="flex items-center gap-2 rounded-full bg-[#00E5A0]/10 px-5 py-2 text-sm">
             <Shield className="size-4 text-[#00E5A0]" />
             <span className="text-muted-foreground">
-              evident.ai can auto-remediate{" "}
+              evidentflow.ai can auto-remediate{" "}
               <span className="font-semibold text-[#00E5A0]">
                 {remediateAnimated.toLocaleString()}
               </span>{" "}

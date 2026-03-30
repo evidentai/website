@@ -40,7 +40,7 @@ export function CtaStep() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
-            You just saw how evident.ai scans your {cloud} infrastructure and surfaces risks in minutes. 
+            You just saw how evidentflow.ai scans your {cloud} infrastructure and surfaces risks in minutes. 
             The real platform does it continuously — and fixes issues automatically.
           </p>
         </motion.div>

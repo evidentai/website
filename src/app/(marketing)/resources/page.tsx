@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Resources — evident.ai",
+  title: "Resources — evidentflow.ai",
   description:
     "Guides, articles, and insights to help you navigate compliance.",
 };

@@ -27,9 +27,9 @@ import {
 import { integrations } from "@/lib/constants";
 
 export const metadata = {
-  title: "Platform — evident.ai",
+  title: "Platform — evidentflow.ai",
   description:
-    "Explore the evident.ai platform: automated evidence collection, AI-powered screenshot capture, policy-as-code, asset inventory, and a dedicated auditor portal for SOC 2, ISO 27001, HIPAA, and more.",
+    "Explore the evidentflow.ai platform: automated evidence collection, AI-powered screenshot capture, policy-as-code, asset inventory, and a dedicated auditor portal for SOC 2, ISO 27001, HIPAA, and more.",
 };
 
 const evidenceItems = [
@@ -818,7 +818,7 @@ violations contains msg if {
             See the platform in action
           </h2>
           <p className="mt-4 mx-auto max-w-xl text-lg text-muted-foreground">
-            Walk through a live demo with our team and see how evident.ai
+            Walk through a live demo with our team and see how evidentflow.ai
             automates evidence collection, screenshot capture, and audit
             preparation for your stack.
           </p>

@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
     <Link href="/" className={cn("flex items-center gap-2", className)}>
       <Shield className="size-6 text-primary" />
       <span className="font-bold text-lg">
-        evident.ai
+        evidentflow.ai
       </span>
     </Link>
   );

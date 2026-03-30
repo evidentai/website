@@ -14,7 +14,7 @@ import { BeamsHero } from "@/components/marketing/beams-hero";
 import { StackedCards } from "@/components/marketing/stacked-cards";
 
 export const metadata: Metadata = {
-  title: "Company — evident.ai",
+  title: "Company — evidentflow.ai",
   description:
     "We believe compliance should be a competitive advantage, not a tax. Meet the team building the future of compliance automation.",
 };
@@ -239,11 +239,11 @@ export default function CompanyPage() {
 
           <div className="mt-8 flex flex-col items-center gap-4">
             <a
-              href="mailto:hello@evident.ai"
+              href="mailto:sales@evidentflow.ai"
               className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
             >
               <Mail className="h-5 w-5" />
-              hello@evident.ai
+              sales@evidentflow.ai
             </a>
 
             <div className="flex items-center gap-6">

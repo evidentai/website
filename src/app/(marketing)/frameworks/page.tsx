@@ -8,7 +8,7 @@ import { frameworks } from "@/lib/constants";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 
 export const metadata: Metadata = {
-  title: "Compliance Frameworks — evident.ai",
+  title: "Compliance Frameworks — evidentflow.ai",
   description:
     "Automate SOC 2, ISO 27001, HIPAA, GDPR, FedRAMP, and more — all from a single platform with continuous evidence collection.",
 };

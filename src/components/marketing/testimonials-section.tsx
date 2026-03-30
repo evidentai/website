@@ -10,7 +10,7 @@ export function TestimonialsSection() {
             What our customers say
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Teams trust evident.ai to streamline their path to certification.
+            Teams trust evidentflow.ai to streamline their path to certification.
           </p>
         </div>
 

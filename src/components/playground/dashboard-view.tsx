@@ -3,7 +3,7 @@
 import { useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { usePlaygroundStore } from "@/lib/playground-store";
-import { getDemoData } from "@/lib/playground-data";
+import { getDemoData, insightsByFramework } from "@/lib/playground-data";
 import {
   CheckCircle2,
   Circle,
@@ -57,7 +57,7 @@ export function DashboardView() {
     };
   }, [finalScore, setComplianceScore]);
 
-  const checkedTarget = Math.ceil(checklistLen * 0.22);
+  const checkedTarget = 3;
 
   useEffect(() => {
     if (!checkedTarget) return;
@@ -92,8 +92,9 @@ export function DashboardView() {
           ? "#3B82F6"
           : "#00E5A0";
 
-  const criticalCount = data.risks.filter((r) => r.severity === "critical").length;
-  const highCount = data.risks.filter((r) => r.severity === "high").length;
+  const stats = framework ? insightsByFramework[framework] : insightsByFramework["SOC 2"];
+  const criticalCount = stats.critical;
+  const highCount = stats.high;
   const passedControls = data.checklist.filter((_, i) => i < checkedItems).length;
 
   return (
@@ -127,7 +128,7 @@ export function DashboardView() {
             <TrendingUp className="size-5 text-[#00E5A0]" />
           </div>
           <div>
-            <p className="text-xl font-bold">{passedControls}/{data.checklist.length}</p>
+            <p className="text-xl font-bold">{passedControls}/{data.totalControls}</p>
             <p className="text-[11px] text-muted-foreground">Controls Passing</p>
           </div>
         </div>
@@ -208,7 +209,7 @@ export function DashboardView() {
           <div className="mb-4 flex items-center justify-between">
             <h3 className="text-lg font-semibold">Controls checklist</h3>
             <span className="rounded-full bg-[#00E5A0]/10 px-2.5 py-0.5 text-xs font-medium text-[#00E5A0]">
-              {passedControls} of {data.checklist.length}
+              {passedControls} of {data.totalControls}
             </span>
           </div>
           <div className="max-h-72 space-y-1.5 overflow-y-auto pr-2">

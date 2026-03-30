@@ -72,7 +72,7 @@ export function PlatformHighlights() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Why teams choose evident.ai
+            Why teams choose evidentflow.ai
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Purpose-built automation that replaces manual compliance workflows
