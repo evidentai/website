@@ -4,7 +4,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Activity, Shield } from "lucide-react";
+import { CheckCircle, Activity, Shield } from "lucide-react";
 import Link from "next/link";
 
 const Beams = dynamic(() => import("@/components/ui/beams"), { ssr: false });
@@ -127,11 +127,33 @@ export function HeroSection() {
               <Button size="lg" asChild>
                 <Link href="/book-demo">
                   Book Demo
-                  <ArrowRight className="size-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/gap-assessment">Start Free SOC 2 Gap Assessment</Link>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="group/tour relative overflow-hidden border-[#00E5A0]/30 hover:border-[#00E5A0]/60 transition-all duration-300"
+              >
+                <Link href="/product-tour" className="gap-2.5">
+                  <span
+                    className="flex size-7 items-center justify-center rounded-full text-xs transition-all duration-300 group-hover/tour:scale-110"
+                    style={{
+                      background: "linear-gradient(135deg, #00E5A0 0%, #00C98B 100%)",
+                      color: "#000",
+                      boxShadow: "0 0 12px rgba(0,229,160,0.4)",
+                    }}
+                  >
+                    ▶
+                  </span>
+                  <span>Product Tour</span>
+                  <span
+                    className="absolute inset-0 -z-10 opacity-0 group-hover/tour:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(0,229,160,0.08) 0%, transparent 60%)",
+                    }}
+                  />
+                </Link>
               </Button>
             </motion.div>
           </div>
