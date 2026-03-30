@@ -80,7 +80,7 @@ export function Navbar() {
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-2">
           <Button variant="ghost" asChild>
-            <Link href="/dashboard">Login</Link>
+            <a href="https://app.evidentflow.ai">Login</a>
           </Button>
           <Button asChild>
             <Link href="/book-demo">Book Demo</Link>
@@ -133,12 +133,12 @@ export function Navbar() {
               </nav>
               <div className="flex flex-col gap-2 px-3">
                 <Button variant="ghost" asChild className="justify-start">
-                  <Link
-                    href="/dashboard"
+                  <a
+                    href="https://app.evidentflow.ai"
                     onClick={() => setMobileOpen(false)}
                   >
                     Login
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild>
                   <Link
