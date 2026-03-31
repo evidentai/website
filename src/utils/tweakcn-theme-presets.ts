@@ -256,7 +256,7 @@ export const tweakcnPresets: Record<string, ThemePreset> = {
   },
 
   twitter: {
-    label: "Twitter",
+    label: "X",
     createdAt: "2025-04-24",
     styles: {
       light: {

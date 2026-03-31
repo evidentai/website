@@ -7,9 +7,9 @@ export function generateOrganizationSchema() {
     logo: "https://yourdomain.com/images/logo.png",
     description: "Continuous compliance & evidence automation for high-growth startups.",
     sameAs: [
-      "https://twitter.com/evidentai",
-      "https://linkedin.com/company/evidentai",
-      "https://github.com/evidentai",
+      "https://x.com/evidentflowai",
+      "https://linkedin.com/company/evidentflowai",
+      "https://github.com/evidentflowai",
     ],
     contactPoint: {
       "@type": "ContactPoint",

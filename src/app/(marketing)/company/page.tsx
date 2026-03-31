@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Shield, Code2, Eye, Mail, Twitter, Linkedin, Github, Globe } from "lucide-react";
+import { Shield, Code2, Eye, Mail, Twitter, Linkedin, Github } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -8,10 +8,11 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { BeamsHero } from "@/components/marketing/beams-hero";
 import { StackedCards } from "@/components/marketing/stacked-cards";
+import { ExpandableBio } from "@/components/team/expandable-bio";
 
 export const metadata: Metadata = {
   title: "Company — evidentflow.ai",
@@ -42,49 +43,44 @@ const values = [
 
 const team = [
   {
-    name: "Alexandra Chen",
-    role: "Founder & CEO",
-    bio: "Former co-founder of TechFlow. Early staff at Microsoft and Google.",
-    initials: "AC",
-    linkedin: "#",
-    github: "#",
-    website: "#",
+    name: "Mohsen",
+    role: "Founder",
+    bio: "Mohsen Ahmadi is a cybersecurity leader specializing in application security, threat modeling, and vulnerability research. With experience at Apple and Cisco, he has contributed to secure system design, including work related to the M1 chip architecture. He has also worked on compliance initiatives and projects supported by Department of Defense (DoD) grants, and is passionate about building secure, scalable systems.",
+    initials: "Mohsen",
+    image: "/images/team/mohsen.png",
+    linkedin: "https://www.linkedin.com/in/pwnslinger",
+    github: "https://github.com/pwnslinger",
+    x: "https://x.com/pwnslinger",
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Chief Technology Officer",
-    bio: "Ex-AWS Principal Engineer. Built security infrastructure for Fortune 500s.",
-    initials: "MR",
-    linkedin: "#",
-    github: "#",
-    website: "#",
+    name: "Mike",
+    role: "Director of Engineering",
+    bio: "",
+    initials: "Mike",
+    image: "/images/team/mike.jpeg",
+    linkedin: "https://www.linkedin.com/in/",
+    github: "",
+    x: "",
   },
   {
-    name: "Priya Sharma",
-    role: "Head of Product",
-    bio: "Previously led compliance products at a Series C security startup.",
-    initials: "PS",
-    linkedin: "#",
-    github: "#",
-    website: "#",
+    name: "Shahin",
+    role: "VP of Operations",
+    bio: "",
+    initials: "Shahin",
+    image: "/images/team/shahin.jpeg",
+    linkedin: "https://www.linkedin.com/in/shahin-chinichian/",
+    github: "",
+    x: "",
   },
   {
-    name: "James Wilson",
-    role: "VP of Engineering",
-    bio: "Former tech lead at Stripe. Built developer tools used by 10k+ companies.",
-    initials: "JW",
-    linkedin: "#",
-    github: "#",
-    website: "#",
-  },
-  {
-    name: "Sarah Kim",
-    role: "Head of Security",
-    bio: "Ex-CISO at high-growth SaaS companies. CISSP, CISM certified.",
-    initials: "SK",
-    linkedin: "#",
-    github: "#",
-    website: "#",
+    name: "Parsa",
+    role: "VP of Platform",
+    bio: "Parsa Banaei is a computer science graduate with experience in startups, where he has worked on building scalable full stack systems and AI driven platforms. His work includes developing backend infrastructure, modern web applications, and integrating machine learning models into real world products. He is focused on building high quality, production ready systems and turning complex ideas into practical solutions.",
+    initials: "Parsa",
+    image: "/images/team/parsa.jpg",
+    linkedin: "https://www.linkedin.com/in/parsa-b-b30034157/",
+    github: "https://github.com/parsabanaei",
+    x: "https://x.com/parsabanaei",
   },
 ];
 
@@ -135,26 +131,28 @@ export default function CompanyPage() {
             from the inside.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
-              <Card key={member.name} className="flex flex-col gap-6 py-2">
-                <CardContent className="p-4">
+              <Card key={member.name} className="flex flex-col">
+                <CardContent className="flex flex-col p-4">
                   <div className="text-center">
                     <div className="flex justify-center mb-4">
                       <div className="relative mx-auto h-36 w-36">
-                        {/* Dot pattern background */}
                         <div 
                           aria-hidden="true" 
                           className="absolute inset-0 bg-[radial-gradient(circle,var(--foreground)_1px,transparent_1px)] bg-[length:16px_16px] opacity-30"
                         />
-                        {/* Radial gradient overlay */}
                         <div 
                           aria-hidden="true" 
                           className="absolute inset-0 bg-[radial-gradient(circle,transparent_0%,var(--card)_100%)]"
                         />
-                        {/* Avatar container */}
                         <div className="absolute inset-0 m-auto flex h-12 w-12 items-center justify-center rounded-md border bg-background shadow-xs">
-                          <Avatar className="h-24 w-24 border shadow-lg">
+                          <Avatar className="h-26 w-26 border shadow-lg">
+                            <AvatarImage 
+                              src={member.image} 
+                              alt={member.name}
+                              className={`object-cover ${member.name === "Parsa" ? "object-top" : ""}`}
+                            />
                             <AvatarFallback className="text-lg font-semibold">
                               {member.initials}
                             </AvatarFallback>
@@ -171,37 +169,41 @@ export default function CompanyPage() {
                     >
                       {member.role}
                     </p>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                      {member.bio}
-                    </p>
+                    <ExpandableBio bio={member.bio} memberName={member.name} />
                     <div className="flex items-center justify-center gap-3">
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} LinkedIn`}
-                        className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
-                      >
-                        <Linkedin className="h-4 w-4" aria-hidden="true" />
-                      </a>
-                      <a
-                        href={member.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} GitHub`}
-                        className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
-                      >
-                        <Github className="h-4 w-4" aria-hidden="true" />
-                      </a>
-                      <a
-                        href={member.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} Website`}
-                        className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
-                      >
-                        <Globe className="h-4 w-4" aria-hidden="true" />
-                      </a>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} LinkedIn`}
+                          className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
+                        >
+                          <Linkedin className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      )}
+                      {member.github && (
+                        <a
+                          href={member.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} GitHub`}
+                          className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
+                        >
+                          <Github className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      )}
+                      {member.x && (
+                        <a
+                          href={member.x}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} X`}
+                          className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
+                        >
+                          <Twitter className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -250,7 +252,7 @@ export default function CompanyPage() {
               <a
                 href="#"
                 className="text-muted-foreground transition-colors hover:text-foreground"
-                aria-label="Twitter"
+                aria-label="X"
               >
                 <Twitter className="h-5 w-5" />
               </a>

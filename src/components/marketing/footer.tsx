@@ -12,7 +12,7 @@ const columnHeaders: { key: keyof typeof footerLinks; label: string }[] = [
 
 const socialLinks = [
   { label: "LinkedIn", href: "#", icon: Linkedin },
-  { label: "Twitter", href: "#", icon: Twitter },
+  { label: "X", href: "#", icon: Twitter },
   { label: "GitHub", href: "#", icon: Github },
 ];
 
