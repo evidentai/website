@@ -74,10 +74,7 @@ export function BasicInfoStep({ data, onChange, onNext }: BasicInfoStepProps) {
           Tell us about yourself
         </h2>
         <p className="mt-3 text-lg text-muted-foreground">
-          This short questionnaire helps us understand your environment, tools,
-          and compliance goals ahead of our discussion. By gathering this
-          information in advance, we can tailor the conversation to your specific
-          needs and ensure a more focused, efficient, and valuable call.
+          We&apos;ll use this to personalize your compliance setup.
         </p>
       </motion.div>
 
