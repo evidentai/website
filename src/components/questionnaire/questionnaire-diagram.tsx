@@ -309,7 +309,7 @@ export function QuestionnaireDiagram({ currentStep }: QuestionnaireDiagramProps)
                     <motion.div
                       key={item.label}
                       ref={(el) => { stackEls.current[i] = el; }}
-                      className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] transition-all duration-300 ${
+                      className={`flex w-[6.5rem] items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] transition-all duration-300 ${
                         isActive
                           ? "bg-[#00E5A0]/10 ring-1 ring-[#00E5A0]/30"
                           : `${glassChip} hover:bg-white/[0.06]`

@@ -90,12 +90,7 @@ export function ReviewStep({
             Thank you!
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Your questionnaire has been submitted successfully. Our team will
-            review your responses and get back to you shortly.
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            A copy has been sent to{" "}
-            <span className="text-[#00E5A0]">{data.email}</span>
+            Your questionnaire has been sent successfully. Thank you!
           </p>
         </motion.div>
       </div>
