@@ -1,6 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Shield, Code2, Eye, Mail, Twitter, Linkedin, Github } from "lucide-react";
+import { Shield, Code2, Eye, Mail, Linkedin, Github } from "lucide-react";
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
 import {
   Card,
   CardContent,
@@ -201,7 +209,7 @@ export default function CompanyPage() {
                           aria-label={`${member.name} X`}
                           className="inline-flex items-center justify-center rounded-md transition-all hover:bg-accent dark:hover:bg-accent/50 h-8 w-8 cursor-pointer hover:text-primary"
                         >
-                          <Twitter className="h-4 w-4" aria-hidden="true" />
+                          <XIcon className="h-4 w-4" />
                         </a>
                       )}
                     </div>
@@ -254,7 +262,7 @@ export default function CompanyPage() {
                 className="text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="X"
               >
-                <Twitter className="h-5 w-5" />
+                <XIcon className="h-5 w-5" />
               </a>
               <a
                 href="#"
