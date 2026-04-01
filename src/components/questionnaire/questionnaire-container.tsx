@@ -281,23 +281,13 @@ export function QuestionnaireContainer() {
   if (showIntro) {
     return (
       <div ref={topRef} className="flex min-h-[60vh] items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-          className="relative w-full max-w-lg"
-        >
+        <div className="relative w-full max-w-lg">
           {/* Glow border */}
           <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-[#00E5A0]/20 via-white/[0.06] to-white/[0.02]" />
 
           {/* Glass card */}
           <div className="relative rounded-2xl border border-white/[0.08] bg-white/[0.04] px-8 py-10 backdrop-blur-xl sm:px-10 sm:py-12">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-              className="flex flex-col items-center text-center"
-            >
+            <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex size-16 items-center justify-center rounded-full bg-[#00E5A0]/10 ring-1 ring-[#00E5A0]/20">
                 <ClipboardCheck className="size-8 text-[#00E5A0]" />
               </div>
@@ -314,12 +304,7 @@ export function QuestionnaireContainer() {
                 valuable call.
               </p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.45 }}
-                className="mt-8"
-              >
+              <div className="mt-8">
                 <Button
                   size="lg"
                   onClick={() => setShowIntro(false)}
@@ -327,10 +312,10 @@ export function QuestionnaireContainer() {
                 >
                   OK, Let&apos;s Start
                 </Button>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     );
   }
