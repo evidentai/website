@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/marketing/hero-section";
 import { LogoBar } from "@/components/marketing/logo-bar";
 import { ProblemSection } from "@/components/marketing/problem-section";
+import { DesignPartners } from "@/components/marketing/design-partners";
 import { SolutionDiagram } from "@/components/marketing/solution-diagram";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { PlatformHighlights } from "@/components/marketing/platform-highlights";
@@ -29,6 +30,7 @@ export default function HomePage() {
       <HeroSection />
       <LogoBar />
       <ProblemSection />
+      <DesignPartners />
       <SolutionDiagram />
       <HowItWorks />
       <PlatformHighlights />
