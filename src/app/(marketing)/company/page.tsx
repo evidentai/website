@@ -58,7 +58,7 @@ const team = [
     bio: "",
     initials: "Mike",
     image: "/images/team/mike.jpeg",
-    linkedin: "https://www.linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/clark-in-canada/",
     github: "",
     x: "",
   },
