@@ -45,7 +45,7 @@ export default function PricingPage() {
 
           <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
             <p className="text-base font-medium text-foreground">
-              🎯 First SOC 2 readiness assessment — completely free. No credit
+               First SOC 2 readiness assessment — completely free. No credit
               card required.
             </p>
           </div>

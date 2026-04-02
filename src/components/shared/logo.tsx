@@ -1,14 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={cn("flex items-center gap-2", className)}>
-      <Shield className="size-6 text-primary" />
-      <span className="font-bold text-lg">
-        evidentflow.ai
-      </span>
+    <Link href="/" className={cn("flex items-center", className)}>
+      <Image
+        src="/images/logo.svg"
+        alt="evidentflow.ai"
+        width={180}
+        height={42}
+        priority
+      />
     </Link>
   );
 }
