@@ -73,7 +73,7 @@ const team = [
   {
     name: "Shahin",
     role: "VP of Operations",
-    bio: "",
+    bio: "Shahin Chinichian is a Senior Data Scientist at Leidos with experience in data science, business analytics, and strategy. Shahin previously worked at KPMG and holds an M.S. in Business Analytics from the University of California, Irvine.",
     initials: "Shahin",
     image: "/images/team/shahin.jpeg",
     linkedin: "https://www.linkedin.com/in/shahin-chinichian/",
