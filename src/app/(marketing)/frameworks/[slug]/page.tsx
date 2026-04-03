@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -49,8 +50,14 @@ export default async function FrameworkPage({
       {/* Hero */}
       <BeamsHero size="medium">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <fw.icon className="h-7 w-7" />
+          <div className={`mx-auto mb-6 flex items-center justify-center ${fw.slug === "gdpr" ? "h-28 w-40" : "h-28 w-28"}`}>
+            <Image
+              src={fw.image}
+              alt={fw.name}
+              width={fw.slug === "gdpr" ? 160 : 112}
+              height={fw.slug === "gdpr" ? 115 : 112}
+              className="object-contain"
+            />
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             {fw.name}

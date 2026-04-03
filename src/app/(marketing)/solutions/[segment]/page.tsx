@@ -67,7 +67,7 @@ export default async function SolutionPage({
       </BeamsHero>
 
       {/* Value Props */}
-      <section className="mx-auto max-w-5xl px-6 pb-24">
+      <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {solution.valueProps.map((vp) => (
             <Card key={vp.title}>

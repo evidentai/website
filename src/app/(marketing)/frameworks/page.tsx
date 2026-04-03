@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -34,8 +35,14 @@ export default function FrameworksPage() {
             <Link key={fw.slug} href={`/frameworks/${fw.slug}`} className="group">
               <Card className="h-full transition-shadow hover:shadow-md">
                 <CardHeader>
-                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <fw.icon className="h-5 w-5" />
+                  <div className={`mb-2 flex items-center justify-center ${fw.slug === "gdpr" ? "h-14 w-16" : "h-14 w-14"}`}>
+                    <Image
+                      src={fw.image}
+                      alt={fw.name}
+                      width={fw.slug === "gdpr" ? 64 : 56}
+                      height={fw.slug === "gdpr" ? 46 : 56}
+                      className="object-contain"
+                    />
                   </div>
                   <CardTitle className="flex items-center gap-2 text-lg">
                     {fw.name}

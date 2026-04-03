@@ -11,6 +11,7 @@ import {
   GitBranch,
   Building,
   Eye,
+  Rocket,
   type LucideIcon,
 } from "lucide-react";
 
@@ -79,6 +80,11 @@ export const navLinks = [
         href: "/frameworks/fedramp",
         description: "Federal risk authorization",
       },
+      {
+        label: "CMMC",
+        href: "/frameworks/cmmc",
+        description: "Cybersecurity maturity for defense contractors",
+      },
     ],
   },
   { label: "Customers", href: "/customers" },
@@ -121,6 +127,7 @@ export interface Framework {
   whoNeeds: string;
   controlCount: number;
   icon: LucideIcon;
+  image: string;
   controls: string[];
   automationFeatures: string[];
 }
@@ -138,6 +145,7 @@ export const frameworks: Framework[] = [
       "Any SaaS company selling to mid-market or enterprise buyers. SOC 2 is often a prerequisite in vendor security questionnaires and procurement processes.",
     controlCount: 60,
     icon: Shield,
+    image: "/images/frameworks/soc2.png",
     controls: [
       "Access Control",
       "Change Management",
@@ -168,6 +176,7 @@ export const frameworks: Framework[] = [
       "Companies operating globally or selling to European enterprises. ISO 27001 certification signals mature security practices to international partners and customers.",
     controlCount: 93,
     icon: Globe,
+    image: "/images/frameworks/iso27001.png",
     controls: [
       "Information Security Policies",
       "Asset Management",
@@ -197,6 +206,7 @@ export const frameworks: Framework[] = [
       "Healthcare technology companies, digital health startups, telehealth platforms, and any organization that creates, receives, maintains, or transmits PHI.",
     controlCount: 54,
     icon: Lock,
+    image: "/images/frameworks/hipaa.png",
     controls: [
       "Administrative Safeguards",
       "Physical Safeguards",
@@ -226,6 +236,7 @@ export const frameworks: Framework[] = [
       "Any company processing personal data of EU residents, including SaaS companies with EU customers, e-commerce platforms, and data processors.",
     controlCount: 45,
     icon: Eye,
+    image: "/images/frameworks/gdpr.png",
     controls: [
       "Lawful Basis for Processing",
       "Data Subject Rights",
@@ -255,6 +266,7 @@ export const frameworks: Framework[] = [
       "Cloud service providers looking to sell to U.S. federal agencies. FedRAMP authorization is required for any cloud service used by a government agency.",
     controlCount: 325,
     icon: Building,
+    image: "/images/frameworks/fedramp.png",
     controls: [
       "Access Control",
       "Audit & Accountability",
@@ -271,6 +283,37 @@ export const frameworks: Framework[] = [
       "Plan of Action & Milestones (POA&M) tracking",
       "System Security Plan (SSP) generation",
       "Monthly vulnerability scan automation",
+    ],
+  },
+  {
+    slug: "cmmc",
+    name: "CMMC 2.0",
+    shortName: "CMMC",
+    description:
+      "Cybersecurity maturity model certification for defense industrial base contractors.",
+    longDescription:
+      "The Cybersecurity Maturity Model Certification (CMMC) 2.0 is a framework developed by the U.S. Department of Defense to protect Controlled Unclassified Information (CUI) and Federal Contract Information (FCI) within the defense industrial base. CMMC 2.0 streamlines the original model into three levels aligned with NIST SP 800-171 and NIST SP 800-172 standards.",
+    whoNeeds:
+      "Defense contractors, subcontractors, and any organization in the defense industrial base (DIB) that handles CUI or FCI. CMMC certification is required to bid on DoD contracts.",
+    controlCount: 110,
+    icon: Shield,
+    image: "/images/frameworks/cmmc.png",
+    controls: [
+      "Access Control",
+      "Audit & Accountability",
+      "Awareness & Training",
+      "Configuration Management",
+      "Identification & Authentication",
+      "Incident Response",
+      "Media Protection",
+      "System & Communications Protection",
+    ],
+    automationFeatures: [
+      "NIST SP 800-171 control mapping and continuous monitoring",
+      "CUI flow tracking and boundary enforcement",
+      "Automated System Security Plan (SSP) and POA&M generation",
+      "Maturity level assessment with gap analysis",
+      "Evidence collection aligned to CMMC assessment requirements",
     ],
   },
 ];
@@ -301,7 +344,7 @@ export const solutions: Solution[] = [
     headline: "Get SOC 2 ready in weeks, not months",
     description:
       "Your first enterprise deal is waiting. Stop losing revenue to security questionnaires you can't answer. We automate the entire SOC 2 journey so you can close deals faster.",
-    icon: Laptop,
+    icon: Rocket,
     valueProps: [
       {
         title: "Close Enterprise Deals Faster",
