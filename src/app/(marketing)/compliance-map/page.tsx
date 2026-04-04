@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ComplianceMapPage() {
   return (
     <>
-      <BeamsHero size="small">
+      <BeamsHero size="compact">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             Compliance Intelligence Map
